@@ -8,11 +8,11 @@ Perform a downsampling against one specified TSDB block. Used for testing only.
 usage: thanos-downsample [<flags>] <block id> [<db path>]
 
 Flags:
-  -h, --help       Show context-sensitive help (also try --help-long and --help-man).
-      --version    Show application version.
-      --res=60000  Downsample resolution (default is 1m)
+  -h, --help        Show context-sensitive help (also try --help-long and --help-man).
+      --version     Show application version.
+      --res=300000  Downsample resolution (default is 5m)
       --dir="/tmp/thanos-downsample"  
-                   Directory for downsampling
+                    Directory for downsampling
 
 Args:
   <block id>   Block to downsample

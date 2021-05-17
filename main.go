@@ -19,13 +19,13 @@ func main() {
 	app.HelpFlag.Short('h')
 
 	defaultDBPath := "data/"
-	// 1m.
-	defaultResolution := "60000"
+	// 5m.
+	defaultResolution := "300000"
 	defaultDownsampleDir := "/tmp/thanos-downsample"
 
-	dbPath := app.Arg("db path", "Database path (default is "+defaultDBPath+").").Default(defaultDBPath).String()
 	blockID := app.Arg("block id", "Block to downsample").Required().String()
-	resolution := app.Flag("res", "Downsample resolution (default is 1m)").Default(defaultResolution).Int64()
+	dbPath := app.Arg("db path", "Database path (default is "+defaultDBPath+").").Default(defaultDBPath).String()
+	resolution := app.Flag("res", "Downsample resolution (default is 5m)").Default(defaultResolution).Int64()
 	downsampleDir := app.Flag("dir", "Directory for downsampling").Default(defaultDownsampleDir).String()
 
 	kingpin.MustParse(app.Parse(os.Args[1:]))
